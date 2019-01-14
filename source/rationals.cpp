@@ -1013,8 +1013,8 @@ bool CRationals::ComputeCohomologies(const CInternalData &id, const CMonomialsLi
     {
         // Show some progress status output
         char buf[128];
-        safe_sprintf(buf, sizeof(buf), "Computing target cohomology %d of %d (%.1f%% done)...", (int) (i+1), (int) numCohoms, (double) i*100 / numCohoms);
-        CONSOLE_OUT(buf << "       \r");
+        //safe_sprintf(buf, sizeof(buf), "Computing target cohomology %d of %d (%.1f%% done)...", (int) (i+1), (int) numCohoms, (double) i*100 / numCohoms); outcommented for nicer output in gap
+        //CONSOLE_OUT(buf << "       \r"); outcommented for nicer output in gap
 
         // Prepare the input data and compute the cohomology
         const i32vec64 &curtargetdiv = id.GetTargetDivisors()[i];
@@ -1064,7 +1064,8 @@ bool CRationals::ComputeCohomologies(const CInternalData &id, const CMonomialsLi
         out_cohomologies.push_back(curcohom);
     }
 
-    CONSOLE_MSG_OUT("Computation of the target cohomology group dimensions complete.");
+    // Outcommented for nicer output in gap
+    //CONSOLE_MSG_OUT("Computation of the target cohomology group dimensions complete.");
 
     return true;
 }
