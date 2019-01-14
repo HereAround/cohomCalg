@@ -424,7 +424,7 @@ typedef struct
        << endl;
     string strAppInfo = ss.str();
 
-    CONSOLE_MSG_OUT(strAppInfo);
+    //CONSOLE_MSG_OUT(strAppInfo);  <- Outcommented for nicer output in gap
 
     // STEP 1: Analyze the command line arguments
     if (!CCmdLineArguments::ParseCmdLineArguments(argc, argv))
@@ -501,14 +501,15 @@ typedef struct
     }
     else
     {
-        CONSOLE_MSG_OUT("Usage and generation of intermediate monomial files deactivated.");
-        CONSOLE_MSG_OUT("");
+        // outcommented for nicer output in gap
+        //CONSOLE_MSG_OUT("Usage and generation of intermediate monomial files deactivated.");
+        //CONSOLE_MSG_OUT("");
     }
 
     if (bComputeMonoms)
     {
         // STEP 5: Start the computation of the secondary sequences
-        CONSOLE_MSG_OUT("Starting computation of secondary sequences...");
+        // CONSOLE_MSG_OUT("Starting computation of secondary sequences...");  outcommented for nice output in gap
 		if (CCmdLineArguments::GetVerboseLevel() >= 6)
 			MSG_OUT("   - Generating secondary sequences...");
 
@@ -615,7 +616,8 @@ typedef struct
         MSG_OUT("");
     }
 
-    CONSOLE_MSG_OUT("Computation of secondary cohomologies and contributions complete.");
+    // Outcommented for nice output in gap
+    // CONSOLE_MSG_OUT("Computation of secondary cohomologies and contributions complete.");
 
     //////////////////////////
 
@@ -688,9 +690,10 @@ typedef struct
         MSG_OUT("    " << SecondsToTime(rationalscount)  << " for the counting of rational functions");
     }
 
-    CONSOLE_MSG_OUT("");
-    CONSOLE_MSG_OUT("    All done. Program run successfully completed.");
-    CONSOLE_MSG_OUT("");
+    // Outcommented for nicer output in gap
+    //CONSOLE_MSG_OUT("");
+    //CONSOLE_MSG_OUT("    All done. Program run successfully completed.");
+    //CONSOLE_MSG_OUT("");
 
     return 0;
 }
